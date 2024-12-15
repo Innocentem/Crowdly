@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event'd - Event Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Event Details</h1>
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="event-info">
+            <h2>{{ event.title }}</h2>
+            <p><strong>Description:</strong> {{ event.description }}</p>
+            <p><strong>Category:</strong> {{ event.category }}</p>
+            <p><strong>Location:</strong> {{ event.location }}</p>
+            <p><strong>Date:</strong> {{ event.date.strftime('%Y-%m-%d %H:%M') }}</p>
+            <p><strong>Created by:</strong> {{ event.creator.username }}</p>
+        </section>
+
+        <section id="actions">
+            <a href="/dashboard" class="btn">Back to Dashboard</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Event'd. All rights reserved.</p>
+    </footer>
+</body>
+</html>

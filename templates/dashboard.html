@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowdly - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Your Dashboard</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="create-event">
+            <h2>Create a New Event</h2>
+            <form action="/dashboard" method="POST">
+                <label for="title">Event Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="Party">Party</option>
+                    <option value="Hookup">Hookup</option>
+                    <option value="Get-Together">Get-Together</option>
+                </select>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="date">Date (YYYY-MM-DD HH:MM):</label>
+                <input type="text" id="date" name="date" required>
+
+                <button type="submit" class="btn">Create Event</button>
+            </form>
+        </section>
+
+        <section id="search-events">
+            <h2>Search Events</h2>
+            <form action="/dashboard" method="POST">
+                <label for="search_query">Search:</label>
+                <input type="text" id="search_query" name="search_query" required>
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </section>
+
+        <section id="event-list">
+            <h2>Your Events</h2>
+            <ul>
+                <!-- Placeholder for dynamically loaded events -->
+                <li>No events found. Create one to get started!</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Crowdly. All rights reserved.</p>
+    </footer>
+</body>
+</html>

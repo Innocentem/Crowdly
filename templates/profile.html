@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowdly - Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Your Profile</h1>
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="profile-info">
+            <h2>{{ user.username }}</h2>
+            <p><strong>Gender:</strong> {{ user.gender }}</p>
+            <p><strong>Location:</strong> {{ user.location }}</p>
+            <p><strong>Hobbies:</strong> {{ user.hobbies }}</p>
+            <p><img src="{{ url_for('static', filename='profile_pictures/' + user.profile_picture) }}" alt="Profile Picture" class="profile-pic"></p>
+        </section>
+
+        <section id="edit-profile">
+            <h2>Edit Profile</h2>
+            <form action="/profile" method="POST" enctype="multipart/form-data">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" value="{{ user.location }}" required>
+
+                <label for="hobbies">Hobbies:</label>
+                <input type="text" id="hobbies" name="hobbies" value="{{ user.hobbies }}" required>
+
+                <label for="profile_picture">Profile Picture:</label>
+                <input type="file" id="profile_picture" name="profile_picture">
+
+                <button type="submit" class="btn">Save Changes</button>
+            </form>
+        </section>
+
+        <section id="user-events">
+            <h2>Your Events</h2>
+            <ul>
+                {% for event in user.events %}
+                    <li>
+                        <a href="/events/{{ event.id }}">{{ event.title }}</a>
+                        <span>({{ event.date.strftime('%Y-%m-%d %H:%M') }})</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Crowdly. All rights reserved.</p>
+    </footer>
+</body>
+</html>

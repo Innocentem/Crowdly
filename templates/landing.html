@@ -1,0 +1,71 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowdly - Discover and Host Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Welcome to Crowdly!</h1>
+            <p>Your platform to discover and host exciting events.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="features">
+            <h2>Why Crowdly?</h2>
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Find events near you.</p>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-calendar-plus"></i>
+                    <p>Create and manage your own events.</p>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-users"></i>
+                    <p>Connect with like-minded people.</p>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-signal"></i>
+                    <p>Get personalized event suggestions.</p>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-search-location"></i>
+                    <p>Explore events in different locations.</p>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <p>Join interactive workshops and talks.</p>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-bullhorn"></i>
+                    <p>Promote your events easily.</p>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-user-friends"></i>
+                    <p>Build your community.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta">
+            <h2>Get Started Today!</h2>
+            <a href="/register" class="btn">Sign Up</a>
+            <a href="/login" class="btn">Login</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Crowdly. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

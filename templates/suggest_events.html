@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowdly - Suggest an Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Suggest an Event</h1>
+        <p>Help us grow the Crowdly community by suggesting an event you'd like to see listed.</p>
+    </header>
+
+    <main>
+        <form action="{{ url_for('suggest_events') }}" method="POST">
+            <label for="event_name">Event Name:</label>
+            <input type="text" id="event_name" name="event_name" required>
+
+            <label for="event_date">Event Date:</label>
+            <input type="date" id="event_date" name="event_date" required>
+
+            <label for="event_location">Event Location:</label>
+            <input type="text" id="event_location" name="event_location" required>
+
+            <label for="event_description">Event Description:</label>
+            <textarea id="event_description" name="event_description" rows="5" required></textarea>
+
+            <button type="submit" class="btn">Submit Suggestion</button>
+        </form>
+
+        <p>Need help or have questions? <a href="/contact">Contact us</a>.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Crowdly. All rights reserved.</p>
+    </footer>
+</body>
+</html>

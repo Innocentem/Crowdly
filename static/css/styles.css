@@ -1,0 +1,121 @@
+/* CSS (styles.css) */
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background: #007bff;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.header-content h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.header-content p {
+    font-size: 1.2em;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+/* Features section styling */
+#features {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#features h2 {
+    color: #007bff;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.icon-item {
+    background: #e9ecef;
+    padding: 15px;
+    text-align: center;
+    border-left: 4px solid #007bff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-item i {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.icon-item p {
+    margin: 0;
+    color: #333;
+}
+
+/* Call to action section styling */
+#cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#cta h2 {
+    color: #007bff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: #007bff;
+    background: #f4f4f4;
+    border: 1px solid #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+/* Footer styling */
+footer {
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9em;
+}

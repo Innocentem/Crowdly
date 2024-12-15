@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Edit Event</h1>
+
+        <form method="POST" action="{{ url_for('edit_event', event_id=event.id) }}">
+            {{ form.hidden_tag() }}
+            <div class="field">
+                <label class="label" for="title">Event Title</label>
+                <div class="control">
+                    {{ form.title(class_='input', placeholder='Enter event title') }}
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="description">Description</label>
+                <div class="control">
+                    {{ form.description(class_='textarea', placeholder='Enter event description') }}
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="category">Category</label>
+                <div class="control">
+                    {{ form.category(class_='select') }}
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="location">Location</label>
+                <div class="control">
+                    {{ form.location(class_='input', placeholder='Enter event location') }}
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="date">Date (YYYY-MM-DD HH:MM)</label>
+                <div class="control">
+                    {{ form.date(class_='input', placeholder='Enter event date') }}
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    {{ form.submit(class_='button is-link', value='Update Event') }}
+                </div>
+            </div>
+        </form>
+
+        <div>
+            <a href="{{ url_for('dashboard') }}" class="button is-text">Back to Dashboard</a>
+        </div>
+
+        {% if flash_messages %}
+            {% for message in flash_messages %}
+                <div class="notification {{ 'is-success' if message.category == 'success' else 'is-danger' }}">
+                    {{ message.message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
